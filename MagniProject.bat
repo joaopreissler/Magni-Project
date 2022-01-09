@@ -7,5 +7,9 @@ cd ..
 cd ..
 cd ..
 cd ..
-cd frontend\client
-call npm run electron - build
+cd %~dp0\frontend
+echo "Unzipping file..."
+START /WAIT powershell -Command "Expand-Archive client-win32-x64.zip -DestinationPath %~dp0\frontend"
+echo "Done!"
+cd client-win32-x64
+start client.exe

@@ -5691,11 +5691,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\joaov\\Desktop\\Projects\\Magni\\BackEnd\\MagniFinance\\MagniFinance\\MagniFinance.csproj",
+      "projectUniqueName": "C:\\Users\\joaov\\Desktop\\Projects\\Magni\\Magni-Project\\BackEnd\\MagniFinance\\MagniFinance\\MagniFinance.csproj",
       "projectName": "MagniFinance",
-      "projectPath": "C:\\Users\\joaov\\Desktop\\Projects\\Magni\\BackEnd\\MagniFinance\\MagniFinance\\MagniFinance.csproj",
+      "projectPath": "C:\\Users\\joaov\\Desktop\\Projects\\Magni\\Magni-Project\\BackEnd\\MagniFinance\\MagniFinance\\MagniFinance.csproj",
       "packagesPath": "C:\\Users\\joaov\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\joaov\\Desktop\\Projects\\Magni\\BackEnd\\MagniFinance\\MagniFinance\\obj\\",
+      "outputPath": "C:\\Users\\joaov\\Desktop\\Projects\\Magni\\Magni-Project\\BackEnd\\MagniFinance\\MagniFinance\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"

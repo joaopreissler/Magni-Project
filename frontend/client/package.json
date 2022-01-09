@@ -9,7 +9,8 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "electron": "electron .",
-    "electron-build": "ng build --prod && electron ." 
+    "electron-build": "ng build --prod && electron .",
+    "electron-package-win": "ng build --prod && electron-packager client client -- plataform=win32 --arch=x64 --electron-version=1.4.3" 
     
   },
   "private": true,
@@ -50,10 +51,6 @@
     "version": "1.0.0",
     "description": "Angular CLI + Electron",
     "main": "electron.prod.js",
-    "license": "MIT",
-    "devDependencies": {
-        "cross-var": "^1.1.0",
-        "electron-packager": "^15.4.0"
-    }
+    "license": "MIT"
   }
 }
