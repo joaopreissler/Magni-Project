@@ -1,0 +1,91 @@
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="#">{{college}}</a></li>
+      <li class="breadcrumb-item active" aria-current="page">{{course}}</li>
+      <li class="breadcrumb-item active" aria-current="page" >Subjects</li>
+    </ol>
+  </nav>
+<button type="button" class="btn btn-success" (click)="open(Add)">New Subject</button>
+<button type="button" style="float: right;" class="btn btn-dark" (click)="backClicked();">Go Back</button>
+<table class="table">
+   <thead>
+     <tr>
+       
+       <th scope="col">Id</th>
+       <th scope="col">Student</th>
+       <th scope="col">Options</th>
+     </tr>
+   </thead>
+   <tbody>
+     <tr *ngFor="let subject of subjects">
+       
+       <td>{{subject.id}}</td>
+       <td>{{subject.name}}</td>
+      
+       <td>
+           <button type="button" class="btn btn-warning m-2" (click)="open(content);subjectdata.id = subject.id">Edit</button>
+           <button type="button" class="btn btn-info m-2" routerLink="students/{{subject.id}}" >Students</button>
+           <button type="button" class="btn btn-danger m-2" (click)="open(remove);subjectdata.id = subject.id;subjectdata.name = subject.name;">Delete</button>
+       </td>
+     </tr>
+     
+   </tbody>
+ </table>
+
+ <ng-template #Add let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Add Subject</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form (ngSubmit)="AddSubject()" #form="ngForm">
+      <label for="College">Add new Subject</label>
+      <input class="form-control" placeholder="Subject Name" name="name" [(ngModel)]="subjectdto.name">
+      <div class="modal-footer">
+      <button type="submit" class="btn btn-outline-dark" (click)="modal.close('')">Save</button>
+    </div>
+  </form>
+</div>
+  </ng-template>
+
+  <ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Update name</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form (ngSubmit)="Edit()" #form="ngForm">
+      
+            <input class="form-control" placeholder="Course Name" name="name" [(ngModel)]="subjectdata.name">
+  
+    <div class="modal-footer">
+      <button type="submit" class="btn btn-outline-dark" (click)="modal.close()">Save</button>
+    </div>
+  </form>
+</div>
+  </ng-template>
+
+  <ng-template #remove let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Remove Course</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-body"><p><strong>Are you sure you want to delete 
+        <span class="text-primary">{{subjectdata.name}}</span> 
+        ?</strong></p><p>All information associated to this subject will be permanently deleted. <span class="text-danger">This operation can not be undone.</span></p></div>
+</div>
+
+<div class="modal-footer">
+<button type="button" class="btn btn-secondary " (click)="modal.dismiss();">Cancel</button>
+<button type="button" class="btn btn-danger " (click)="Delete(subjectdata.id);modal.dismiss();">Delete</button>
+</div>
+  </ng-template>
+  

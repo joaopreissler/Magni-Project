@@ -1,0 +1,142 @@
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="#">{{college}}</a></li>
+      <li class="breadcrumb-item active" aria-current="page">{{course}}</li>
+      <li class="breadcrumb-item active" aria-current="page" >{{subject}}</li>
+    </ol>
+  </nav>
+  <button type="button" style="float: right;" class="btn btn-dark" (click)="backClicked();">Go Back</button>
+  <div style="float: right;margin-right: 1rem;" *ngIf="Teachername">
+  Teacher : {{Teachername}}
+  </div>
+<button type="button" class="btn btn-success"  (click)="open(Add);">Enroll Student</button>
+<button type="button" class="btn btn-info"  (click)="open(Teacher);" *ngIf="teacherdata == null">Enroll Teacher</button>
+<table class="table">
+   <thead class="thead-dark">
+     <tr>
+       <th scope="col">Id</th>
+       <th scope="col">Student</th>
+       <th scope="col">Birthday</th>
+       <th scope="col">Registration Code</th>
+       <th scope="col">Grade</th>
+       <th scope="col">Options</th>
+     </tr>
+   </thead>
+   <tbody>
+     <tr *ngFor="let student of students">
+       
+       <td>{{student.id}}</td>
+       <td>{{student.name}}</td>
+       <td>{{student.birthday}}</td>
+       <td>{{student.registration}}</td>
+       <td>{{student.grade}}</td>
+       <td>
+           <button type="button" class="btn btn-warning m-2" (click)="open(content);grade.studentid = student.id" *ngIf="student.grade==0">Add Grade</button>
+           <button type="button" class="btn btn-warning m-2" (click)="open(update);grade.studentid = student.id" *ngIf="student.grade!=0">Update Grade</button>
+           
+       </td>
+     </tr>
+     
+   </tbody>
+ </table>
+
+ <ng-template #Add let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Add Student</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form (ngSubmit)="EnrollStudent()" #form="ngForm">
+      <label for="College">Add new Student</label>
+      <select class="form-control"  placeholder="Student Name" name="name" [(ngModel)]="data.studentid">
+       
+        <option *ngFor="let student of allstudents " value="{{student.id}}" >{{student.name}}</option>
+      </select>
+      <div class="modal-footer">
+      <button type="submit" class="btn btn-outline-dark" (click)="modal.close('')">Save</button>
+    </div>
+  </form>
+</div>
+  </ng-template>
+
+  <ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Update name</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form (ngSubmit)="UpdateGrade()" #form="ngForm">
+      
+        <label for="Grade">Grade</label>
+        <input type="text" class="form-control" name="grade" [(ngModel)]="grade.grade">
+  
+    <div class="modal-footer">
+      <button type="submit" class="btn btn-outline-dark" (click)="modal.close()">Save</button>
+    </div>
+  </form>
+</div>
+  </ng-template>
+
+  <ng-template #Teacher let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Teacher Data</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form (ngSubmit)="AddTeacher()" #form="ngForm">
+        <label for="Name">Name</label>
+        <input type="text" class="form-control" name="name" [(ngModel)]="data.name">
+        <label for="Grade">birthday</label>
+        <input type="date" class="form-control" name="birthday" [(ngModel)]="data.birthday">
+        <label for="Grade">Salary</label>
+        <input type="number" class="form-control" name="salary" [(ngModel)]="data.Salary">
+  
+    <div class="modal-footer">
+      <button type="submit" class="btn btn-outline-dark" (click)="modal.close()">Save</button>
+    </div>
+  </form>
+</div>
+  </ng-template>
+  <ng-template #update let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Update name</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form (ngSubmit)="UpdateGrade()" #form="ngForm">
+      
+        <label for="Grade">Grade</label>
+        <input type="text" class="form-control" name="grade" [(ngModel)]="grade.grade">
+  
+    <div class="modal-footer">
+      <button type="submit" class="btn btn-outline-dark" (click)="modal.close()">Save</button>
+    </div>
+  </form>
+</div>
+  </ng-template>
+  <ng-template #remove let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Remove Student</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-body"><p><strong>Are you sure you want to delete 
+        <span class="text-primary">{{data.name}}</span> 
+        ?</strong></p><p>The Student will be removed from this class. <span class="text-danger">Are you sure you with to proceed?</span></p></div>
+</div>
+
+<div class="modal-footer">
+<button type="button" class="btn btn-secondary " (click)="modal.dismiss();">Cancel</button>
+<button type="button" class="btn btn-danger " (click)="Delete(data.id);modal.dismiss();">Delete</button>
+</div>
+  </ng-template>

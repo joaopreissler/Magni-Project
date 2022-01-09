@@ -1,0 +1,85 @@
+
+<button type="button" class="btn btn-success" (click)="open(Add);">Enroll Student</button>
+<button type="button" style="float: right;" class="btn btn-dark" (click)="backClicked();">Go Back</button>
+<table class="table">
+   <thead class="thead-dark">
+     <tr>
+       
+       <th scope="col">Id</th>
+       <th scope="col">Student</th>
+       <th scope="col">Birthday</th>
+       <th scope="col">Registration Code</th>
+       <th scope="col">Grade Average</th>
+       <th scope="col">Options</th>
+     </tr>
+   </thead>
+   <tbody>
+     <tr *ngFor="let student of Students">
+       
+       <td>{{student.id}}</td>
+       <td>{{student.name}}</td>
+       <td>{{student.birthday}}</td>
+       <td>{{student.registration}}</td>
+       <td>{{student.grade}}</td>
+       <td>
+           <button type="button" class="btn btn-warning m-2" (click)="open(content);data.id = student.id">Edit</button>
+           <button type="button" class="btn btn-info m-2" routerLink="/students/{{student.id}}">Courses Enrolled</button>
+      </td>
+     </tr>
+     
+   </tbody>
+ </table>
+
+ <ng-template #Add let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Add Student</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form (ngSubmit)="AddStudent()" #form="ngForm">
+      <label for="College">Add new Student</label>
+      <input class="form-control" placeholder="Student Name" name="name" [(ngModel)]="studentdto.name">
+      <br>
+      <label for="Birthday">Birthday</label>
+      <input type="date" class="form-control" name="birthday" [(ngModel)]="studentdto.birthday">
+      <br>
+      <label for="Birthday">Registration Code</label>
+      <input type="text" class="form-control" name="registration" [(ngModel)]="studentdto.registration">
+      <br>
+      
+      <div class="modal-footer">
+      <button type="submit" class="btn btn-outline-dark" (click)="modal.close('')">Save</button>
+    </div>
+  </form>
+</div>
+  </ng-template>
+
+  <ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Update name</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form (ngSubmit)="Edit()" #form="ngForm">
+      
+        <label for="College">Update Student</label>
+        <input class="form-control" placeholder="Student Name" name="name" [(ngModel)]="data.name">
+        <br>
+        <label for="Birthday">Birthday</label>
+        <input type="date" class="form-control" name="birthday" [(ngModel)]="data.birthday">
+        <br>
+        <label for="Birthday">Registration Code</label>
+        <input type="text" class="form-control" name="registration" [(ngModel)]="data.registration">
+        <br>
+        <label for="Grade">Grade</label>
+        <input type="text" class="form-control" name="grade" [(ngModel)]="data.grade">
+  
+    <div class="modal-footer">
+      <button type="submit" class="btn btn-outline-dark" (click)="modal.close()">Save</button>
+    </div>
+  </form>
+</div>

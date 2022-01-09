@@ -1,0 +1,83 @@
+    <button type="button" class="btn btn-success" (click)="open(Add)">New</button>
+    <button type="button" class="btn btn-success m-1" routerLink="students">View Students</button>
+ <table class="table">
+    <thead>
+      <tr>
+        
+        <th scope="col">Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Options</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let college of colleges">
+        
+        <td>{{college.id}}</td>
+        <td>{{college.name}}</td>
+        <td>
+            <button type="button" class="btn btn-warning m-2" (click)="open(content);data.id = college.id">Edit</button>
+            <button type="button" class="btn btn-info m-2" routerLink="course/{{college.id}}" >Courses</button>
+            <button type="button" class="btn btn-danger m-2" (click)="open(remove);data.id = college.id;data.name = college.name;">Delete</button>
+        </td>
+      </tr>
+      
+    </tbody>
+  </table>
+
+  <ng-template #Add let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Add Institution</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form (ngSubmit)="AddCollege()" #form="ngForm">
+      <label for="College">Add new College</label>
+      <input class="form-control" placeholder="College Name" name="name" [(ngModel)]="data.name">
+      <div class="modal-footer">
+      <button type="submit" class="btn btn-outline-dark" (click)="modal.close('')">Save</button>
+    </div>
+  </form>
+</div>
+  </ng-template>
+
+  <ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Update name</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form (ngSubmit)="Edit()" #form="ngForm">
+      
+            <input class="form-control" placeholder="College Name" name="name" [(ngModel)]="data.name">
+  
+    <div class="modal-footer">
+      <button type="submit" class="btn btn-outline-dark" (click)="modal.close()">Save</button>
+    </div>
+  </form>
+</div>
+  </ng-template>
+  
+  <ng-template #remove let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Remove College</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-body"><p><strong>Are you sure you want to delete 
+        <span class="text-primary">{{data.name}}</span> 
+        ?</strong></p><p>All information associated to this user Institution will be permanently deleted. <span class="text-danger">This operation can not be undone.</span></p></div>
+</div>
+
+<div class="modal-footer">
+<button type="button" class="btn btn-secondary " (click)="modal.dismiss();">Cancel</button>
+<button type="button" class="btn btn-danger " (click)="Delete(data.id);modal.dismiss();">Delete</button>
+</div>
+  </ng-template>
+  
+ 

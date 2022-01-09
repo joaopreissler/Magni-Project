@@ -1,0 +1,23 @@
+<h3>Name : {{Name}}</h3>
+<table class="table">
+    <thead class="thead-dark">
+      <tr>
+        
+        <th scope="col">Id</th>
+        <th scope="col">Subjects Enrolled</th>
+        <th scope="col">Grade</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let subject of Subjects">
+        
+        <td>{{subject.id}}</td>
+        <td>{{subject.name}}</td>
+     
+        <td>{{subject.grade}}</td>
+        
+      </tr>
+      
+    </tbody>
+  </table>
