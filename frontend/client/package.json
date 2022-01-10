@@ -45,12 +45,6 @@
     "karma-coverage": "~2.0.3",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "~1.7.0",
-    "typescript": "~4.3.5",
-    "name": "angular-cli-electron",
-    "productName": "Angular CLI + Electron",
-    "version": "1.0.0",
-    "description": "Angular CLI + Electron",
-    "main": "electron.prod.js",
-    "license": "MIT"
+    "typescript": "~4.3.5"
   }
 }
