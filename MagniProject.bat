@@ -6,7 +6,7 @@ START /WAIT powershell -Command "SqlLocalDB.exe start "MagniProject""
 xcopy "%~dp0\data\MagniProject.mdf" "%HOMEDRIVE%%HOMEPATH%"  
 xcopy "%~dp0\data\MagniProject_log.ldf" "%HOMEDRIVE%%HOMEPATH%" 
 cd  %~dp0\BackEnd\MagniFinance\MagniFinance
-START /WAIT powershell -Command "dotnet watch run" 
+START powershell -Command "dotnet watch run" 
 cd ..
 cd .. 
 cd ..
