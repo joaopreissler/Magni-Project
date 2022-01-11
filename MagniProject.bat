@@ -1,4 +1,8 @@
 echo off
+START /WAIT powershell -Command "SqlLocalDb.exe create "MagniProject" -s"
+START /WAIT powershell -Command "SqlLocalDB.exe start "MagniProject"" 
+cd  %~dp0\BackEnd\MagniFinance\MagniFinance
+START /WAIT powershell -Command "dotnet ef Database update" 
 cd %~dp0\BackEnd\MagniFinance\MagniFinance\bin\Debug\net5.0
 start MagniFinance.exe
 cd ..
@@ -23,4 +27,4 @@ cd client-win32-x64
 start client.exe
 goto end
 :end
-
+EXIT /B
