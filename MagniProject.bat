@@ -3,13 +3,9 @@ START /WAIT powershell -Command "SqlLocalDb.exe create "MagniProject" -s"
 START /WAIT powershell -Command "SqlLocalDB.exe start "MagniProject"" 
 cd  %~dp0\BackEnd\MagniFinance\MagniFinance
 START /WAIT powershell -Command "dotnet ef Database update" 
-cd %~dp0\BackEnd\MagniFinance\MagniFinance\bin\Debug\net5.0
-start MagniFinance.exe
+START /WAIT powershell -Command "dotnet ef Database update" 
 cd ..
 cd .. 
-cd ..
-cd ..
-cd ..
 cd ..
 cd %~dp0\frontend
 if exist client-win32-x64 goto yesfile
