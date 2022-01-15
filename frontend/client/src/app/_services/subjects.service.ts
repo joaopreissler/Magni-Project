@@ -17,18 +17,18 @@ export class SubjectsService {
   constructor(private http : HttpClient) { }
 
   students(id : number) {
-    return this.http.get<Subjects>('https://localhost:5001/Grades/fetch/' + id);
+    return this.http.get<Subjects>('http://18.188.50.175/Grades/fetch/' + id);
   }
   subjects(id : number) {
-    return this.http.get<Subjects>('https://localhost:5001/Grades/Students/' + id);
+    return this.http.get<Subjects>('http://18.188.50.175/Grades/Students/' + id);
   }
   Post(data : Subjectdto){
-   return this.http.post<Subjects>('https://localhost:5001/Subjects/Add', data,this.httpOptions);
+   return this.http.post<Subjects>('http://18.188.50.175/Subjects/Add', data,this.httpOptions);
   }
   Put(data : Subjects){
-    return this.http.put<Subjects>('https://localhost:5001/Subjects/Update', data,this.httpOptions);
+    return this.http.put<Subjects>('http://18.188.50.175/Subjects/Update', data,this.httpOptions);
    }
   Delete(id : number){
-    return this.http.delete<Subjects>('https://localhost:5001/Subjects/Delete/' + id,this.httpOptions);
+    return this.http.delete<Subjects>('http://18.188.50.175/Subjects/Delete/' + id,this.httpOptions);
    }
 }

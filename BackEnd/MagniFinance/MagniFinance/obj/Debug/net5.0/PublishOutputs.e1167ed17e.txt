@@ -1,10 +1,11 @@
 C:\Users\joaov\Desktop\Projects\Magni\Magni-Project\BackEnd\MagniFinance\MagniFinance\bin\Debug\net5.0\publish\MagniFinance.exe
-C:\Users\joaov\Desktop\Projects\Magni\Magni-Project\BackEnd\MagniFinance\MagniFinance\bin\Debug\net5.0\publish\appsettings.Development.json
 C:\Users\joaov\Desktop\Projects\Magni\Magni-Project\BackEnd\MagniFinance\MagniFinance\bin\Debug\net5.0\publish\appsettings.json
+C:\Users\joaov\Desktop\Projects\Magni\Magni-Project\BackEnd\MagniFinance\MagniFinance\bin\Debug\net5.0\publish\appsettings.Production.json
 C:\Users\joaov\Desktop\Projects\Magni\Magni-Project\BackEnd\MagniFinance\MagniFinance\bin\Debug\net5.0\publish\Data\data.json
 C:\Users\joaov\Desktop\Projects\Magni\Magni-Project\BackEnd\MagniFinance\MagniFinance\bin\Debug\net5.0\publish\MagniFinance.dll
 C:\Users\joaov\Desktop\Projects\Magni\Magni-Project\BackEnd\MagniFinance\MagniFinance\bin\Debug\net5.0\publish\MagniFinance.runtimeconfig.json
 C:\Users\joaov\Desktop\Projects\Magni\Magni-Project\BackEnd\MagniFinance\MagniFinance\bin\Debug\net5.0\publish\MagniFinance.pdb
+C:\Users\joaov\Desktop\Projects\Magni\Magni-Project\BackEnd\MagniFinance\MagniFinance\bin\Debug\net5.0\publish\Amazon.Lambda.Core.dll
 C:\Users\joaov\Desktop\Projects\Magni\Magni-Project\BackEnd\MagniFinance\MagniFinance\bin\Debug\net5.0\publish\Microsoft.AspNetCore.JsonPatch.dll
 C:\Users\joaov\Desktop\Projects\Magni\Magni-Project\BackEnd\MagniFinance\MagniFinance\bin\Debug\net5.0\publish\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 C:\Users\joaov\Desktop\Projects\Magni\Magni-Project\BackEnd\MagniFinance\MagniFinance\bin\Debug\net5.0\publish\Microsoft.Data.SqlClient.dll

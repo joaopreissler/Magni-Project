@@ -63,7 +63,6 @@ C:\Users\joaov\Desktop\Projects\Magni\BackEnd\MagniFinance\MagniFinance\bin\Debu
 C:\Users\joaov\Desktop\Projects\Magni\BackEnd\MagniFinance\MagniFinance\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll
 C:\Users\joaov\Desktop\Projects\Magni\BackEnd\MagniFinance\MagniFinance\obj\Debug\net5.0\MagniFinance.csproj.CopyComplete
 C:\Users\joaov\Desktop\Projects\Magni\BackEnd\MagniFinance\MagniFinance\bin\Debug\net5.0\Data\data.json
-C:\Users\joaov\Desktop\Projects\Magni\Magni-Project\BackEnd\MagniFinance\MagniFinance\bin\Debug\net5.0\appsettings.Development.json
 C:\Users\joaov\Desktop\Projects\Magni\Magni-Project\BackEnd\MagniFinance\MagniFinance\bin\Debug\net5.0\Data\data.json
 C:\Users\joaov\Desktop\Projects\Magni\Magni-Project\BackEnd\MagniFinance\MagniFinance\bin\Debug\net5.0\appsettings.json
 C:\Users\joaov\Desktop\Projects\Magni\Magni-Project\BackEnd\MagniFinance\MagniFinance\bin\Debug\net5.0\MagniFinance.exe
@@ -127,4 +126,6 @@ C:\Users\joaov\Desktop\Projects\Magni\Magni-Project\BackEnd\MagniFinance\MagniFi
 C:\Users\joaov\Desktop\Projects\Magni\Magni-Project\BackEnd\MagniFinance\MagniFinance\obj\Debug\net5.0\ref\MagniFinance.dll
 C:\Users\joaov\Desktop\Projects\Magni\Magni-Project\BackEnd\MagniFinance\MagniFinance\obj\Debug\net5.0\MagniFinance.pdb
 C:\Users\joaov\Desktop\Projects\Magni\Magni-Project\BackEnd\MagniFinance\MagniFinance\obj\Debug\net5.0\MagniFinance.genruntimeconfig.cache
+C:\Users\joaov\Desktop\Projects\Magni\Magni-Project\BackEnd\MagniFinance\MagniFinance\bin\Debug\net5.0\appsettings.Production.json
+C:\Users\joaov\Desktop\Projects\Magni\Magni-Project\BackEnd\MagniFinance\MagniFinance\bin\Debug\net5.0\Amazon.Lambda.Core.dll
 C:\Users\joaov\Desktop\Projects\Magni\Magni-Project\BackEnd\MagniFinance\MagniFinance\obj\Debug\net5.0\MagniFinance.csproj.CopyComplete

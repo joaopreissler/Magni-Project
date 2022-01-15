@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "kkgAU9DvXULVUe7lsZLM7sVNL0pbtFtIifw1gy9gh/FpP/FJKJcMmVdjsNOP+QBUFjFK8YhPeUpUgIMtZ+N1rA==",
+  "dgSpecHash": "X0WEWGRZgjyVfXoymfwpBmkq9+hxVTfyDeBWtK2WmE3yK+YYd/yCDpWDhrMsmFvNBGdLueCqVnvaXN0v+nOsrw==",
   "success": true,
   "projectFilePath": "C:\\Users\\joaov\\Desktop\\Projects\\Magni\\Magni-Project\\BackEnd\\MagniFinance\\MagniFinance\\MagniFinance.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\joaov\\.nuget\\packages\\amazon.lambda.core\\2.1.0\\amazon.lambda.core.2.1.0.nupkg.sha512",
     "C:\\Users\\joaov\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\joaov\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\5.0.13\\microsoft.aspnetcore.jsonpatch.5.0.13.nupkg.sha512",
     "C:\\Users\\joaov\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\5.0.13\\microsoft.aspnetcore.mvc.newtonsoftjson.5.0.13.nupkg.sha512",

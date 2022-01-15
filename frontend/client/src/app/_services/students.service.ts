@@ -18,28 +18,28 @@ export class StudentsService {
   constructor(private http : HttpClient) { }
 
   Get() {
-    return this.http.get<Students>('https://localhost:5001/Students');
+    return this.http.get<Students>('http://18.188.50.175/Students');
   }
   Getone(id : number) {
-    return this.http.get<Students>('https://localhost:5001/Students/' + id);
+    return this.http.get<Students>('http://18.188.50.175/Students/' + id);
   }
   Post(data : Studentdto){
-   return this.http.post<Students>('https://localhost:5001/Students/Add', data,this.httpOptions);
+   return this.http.post<Students>('http://18.188.50.175/Students/Add', data,this.httpOptions);
   }
   Enroll(data : Studentdto){
-    return this.http.post<Students>('https://localhost:5001/Students/Enroll', data,this.httpOptions);
+    return this.http.post<Students>('http://18.188.50.175/Students/Enroll', data,this.httpOptions);
    }
   PostGrade(grade : any){
-    return this.http.post<Students>('https://localhost:5001/Grades/Add', grade,this.httpOptions);
+    return this.http.post<Students>('http://18.188.50.175/Grades/Add', grade,this.httpOptions);
    }
    PostTeacher(teacher : Teacher){
-    return this.http.post<any>('https://localhost:5001/Teacher/Add', teacher,this.httpOptions);
+    return this.http.post<any>('http://18.188.50.175/Teacher/Add', teacher,this.httpOptions);
    }
   UpdateGrade(grade : any){
-    return this.http.put<Students>('https://localhost:5001/Grades/Update', grade,this.httpOptions);
+    return this.http.put<Students>('http://18.188.50.175/Grades/Update', grade,this.httpOptions);
    }
   Put(data : Students){
-    return this.http.put<Students>('https://localhost:5001/Students/Update', data,this.httpOptions);
+    return this.http.put<Students>('http://18.188.50.175/Students/Update', data,this.httpOptions);
    }
    
 }
